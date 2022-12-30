@@ -1,0 +1,28 @@
+name: Main
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.1
+      - name: GitHub Action for vsce
+        uses: lannonbr/vsce-action@3.0.0
+      - name: Install yarn
+        run: npm install -g yarn
+      - name: Install Dependencies
+        run: yarn install
+      - name: Build
+        run: vsce package
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: vscode-ext-test-0.0.1.vsix
