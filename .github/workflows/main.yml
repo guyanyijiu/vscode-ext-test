@@ -23,4 +23,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: vscode-ext-test-0.0.1.vsix
+          body_path: CHANGELOG.md
+          files: *.vsix

@@ -1,9 +1,13 @@
 # Change Log
 
-All notable changes to the "vscode-ext-test" extension will be documented in this file.
+## [0.0.5] - 2022-08-12
+- Add tag support: yaml, binding
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.0.4] - 2022-08-10
+- Supported cases: snake, camel, pascal, constant, none
+- Optimize the auto-completion function, which can be triggered in the tag value
+- Fix bugs
 
-## [Unreleased]
-
+## [0.0.1] - 2020-10-21
 - Initial release
+- Supported tags: json, bson, xorm, gorm, form
