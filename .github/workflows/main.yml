@@ -24,4 +24,4 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           body_path: CHANGELOG.md
-          files: vscode-ext-test-${{github.ref:1}}.vsix
+          files: format('vscode-ext-test-{0}.vsix', ${{github.ref :1}})
